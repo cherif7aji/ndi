@@ -69,19 +69,20 @@
   font-weight: 600;
 }
 
-.toggle-btn {
-  background: none;
+.close-sidebar-btn {
+  display: none;
+  background: transparent;
   border: none;
-  color: var(--text-secondary);
+  color: #ffffff;
   cursor: pointer;
   padding: 8px;
-  border-radius: 6px;
-  transition: var(--transition);
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-.toggle-btn:hover {
-  background: rgba(0, 212, 255, 0.08);
-  color: #00d4ff;
+.close-sidebar-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 /* Navigation */
@@ -187,6 +188,13 @@
   }
   .sidebar.mobile-open {
     transform: translateX(0);
+  }
+  
+  /* Afficher le bouton de fermeture uniquement sur mobile quand la sidebar est ouverte */
+  .sidebar.mobile-open .close-sidebar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

@@ -56,7 +56,7 @@ const AuthModal = ({ isOpen, onClose, onSelectAction, currentMode }) => {
             <UserPlus size={24} />
             <div className="action-content">
               <h4>Créer un compte</h4>
-              <p>Rejoignez CyberSec Academy</p>
+              <p>Rejoignez l'Academy</p>
             </div>
           </button>
         </div>

@@ -7,8 +7,7 @@ import {
   AlertTriangle,
   Shield,
   Lock,
-  ChevronLeft,
-  ChevronRight
+  X
 } from 'lucide-react';
 import './Sidebar.css';
 
@@ -63,12 +62,13 @@ const Sidebar = ({ collapsed, onToggle, onNavigate }) => {
             </div>
           )}
         </div>
+        {/* Bouton de fermeture visible uniquement sur mobile quand la sidebar est ouverte */}
         <button 
-          className="toggle-btn"
+          className="close-sidebar-btn"
           onClick={onToggle}
-          title={collapsed ? 'Étendre' : 'Réduire'}
+          title="Fermer"
         >
-          {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
+          <X size={20} />
         </button>
       </div>
 

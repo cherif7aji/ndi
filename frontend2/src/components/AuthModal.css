@@ -13,12 +13,14 @@
   top: 100%;
   right: 0;
   margin-top: 8px;
-  background: var(--card-bg);
-  border: 2px solid var(--cyber-green);
-  border-radius: var(--border-radius);
-  box-shadow: var(--glow-shadow);
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(20px) saturate(180%);
   z-index: 2001;
   width: 320px;
+  max-width: calc(100vw - 32px);
   animation: dropdownSlideIn 0.3s ease-out;
 }
 
@@ -38,30 +40,31 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 24px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(0, 102, 255, 0.05));
 }
 
 .auth-modal-header h3 {
-  color: var(--cyber-green);
+  color: #00d4ff;
   margin: 0;
   font-size: 20px;
   font-weight: 600;
-  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
 .close-btn {
   background: none;
   border: none;
-  color: var(--text-secondary);
+  color: #94a3b8;
   cursor: pointer;
   padding: 8px;
-  border-radius: 6px;
-  transition: var(--transition);
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
 .close-btn:hover {
-  background: var(--primary-bg);
-  color: var(--cyber-red);
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff;
 }
 
 .auth-modal-content {
@@ -69,7 +72,7 @@
 }
 
 .auth-modal-content p {
-  color: var(--text-secondary);
+  color: #94a3b8;
   margin: 0 0 24px 0;
   text-align: center;
   font-size: 14px;
@@ -86,11 +89,11 @@
   align-items: center;
   gap: 16px;
   padding: 20px;
-  background: var(--primary-bg);
-  border: 2px solid var(--border-color);
+  background: rgba(21, 27, 61, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 12px;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   text-align: left;
 }
 
@@ -100,64 +103,128 @@
 }
 
 .login-btn {
-  border-color: var(--cyber-blue);
+  border-color: rgba(0, 212, 255, 0.3);
 }
 
 .login-btn:hover {
-  border-color: var(--cyber-blue);
-  background: rgba(0, 212, 255, 0.05);
-  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.2);
+  border-color: #00d4ff;
+  background: rgba(0, 212, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px);
 }
 
 .login-btn svg {
-  color: var(--cyber-blue);
+  color: #00d4ff;
 }
 
 .register-btn {
-  border-color: var(--cyber-green);
+  border-color: rgba(0, 255, 136, 0.3);
 }
 
 .register-btn:hover {
-  border-color: var(--cyber-green);
-  background: rgba(0, 255, 65, 0.05);
-  box-shadow: 0 8px 25px rgba(0, 255, 65, 0.2);
+  border-color: #00ff88;
+  background: rgba(0, 255, 136, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
+  transform: translateY(-2px);
 }
 
 .register-btn svg {
-  color: var(--cyber-green);
+  color: #00ff88;
+}
+
+.action-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .action-content h4 {
-  color: var(--white);
+  color: #ffffff;
   margin: 0 0 4px 0;
   font-size: 16px;
   font-weight: 600;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .action-content p {
-  color: var(--text-secondary);
+  color: #94a3b8;
   margin: 0;
   font-size: 13px;
   text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Responsive */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .auth-modal {
-    width: 95%;
-    margin: 20px;
+    right: 8px;
+    left: auto;
+    width: calc(100vw - 16px);
+    max-width: 280px;
   }
   
   .auth-modal-header {
-    padding: 16px 20px;
+    padding: 16px 18px;
+  }
+  
+  .auth-modal-header h3 {
+    font-size: 17px;
   }
   
   .auth-modal-content {
-    padding: 20px;
+    padding: 18px;
+  }
+  
+  .auth-modal-content p {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+  
+  .auth-actions {
+    gap: 12px;
   }
   
   .auth-action-btn {
-    padding: 16px;
+    padding: 14px;
     gap: 12px;
+  }
+  
+  .auth-action-btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  
+  .action-content h4 {
+    font-size: 14px;
+  }
+  
+  .action-content p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-modal {
+    width: calc(100vw - 16px);
+    max-width: 260px;
+  }
+  
+  .auth-modal-header {
+    padding: 14px 16px;
+  }
+  
+  .auth-modal-header h3 {
+    font-size: 16px;
+  }
+  
+  .auth-modal-content {
+    padding: 16px;
+  }
+  
+  .auth-action-btn {
+    padding: 12px;
+    gap: 10px;
   }
 }
