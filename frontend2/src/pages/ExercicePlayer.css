@@ -1,0 +1,72 @@
+.exercice-player-page { padding: 24px; max-width: 900px; margin: 0 auto; }
+.header-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+.header-row h1 { color: var(--white); margin:0; }
+.actions { display:flex; gap:8px; align-items:center; }
+
+.timer { padding:8px 16px; background:rgba(0,212,255,0.1); border:1px solid var(--cyber-blue); border-radius:8px; color:var(--cyber-blue); font-weight:600; font-size:16px; }
+.timer.warning { background:rgba(255,7,58,0.1); border-color:var(--danger-color); color:var(--danger-color); animation:pulse 1s infinite; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.card { background: var(--card-bg); border:1px solid var(--border-color); border-radius: var(--border-radius); padding:16px; margin-bottom:16px; }
+.meta { display:flex; gap:24px; margin-bottom:12px; color:var(--text-secondary); }
+.meta .label { color: var(--text-secondary); margin-right:6px; }
+.desc { color: var(--text-primary); margin-top:8px; }
+
+.questions-form { display:flex; flex-direction:column; gap:16px; }
+.question-card { position: relative; }
+.question-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid var(--border-color); }
+.question-number { color:var(--cyber-blue); font-weight:600; font-size:14px; }
+.question-points { color:var(--hacker-green); font-weight:600; font-size:13px; }
+.question-text { color:var(--white); font-size:15px; margin-bottom:16px; line-height:1.6; }
+
+.options { display:flex; flex-direction:column; gap:10px; }
+.option-label { display:flex; align-items:center; gap:12px; padding:12px; background:rgba(0,212,255,0.03); border:1px solid var(--border-color); border-radius:8px; cursor:pointer; transition:all 0.2s; }
+.option-label:hover { background:rgba(0,212,255,0.08); border-color:var(--cyber-blue); }
+.option-label input[type="radio"] { width:18px; height:18px; cursor:pointer; }
+.option-text { color:var(--text-primary); flex:1; }
+
+.text-answer, .code-answer { width:100%; background:var(--primary-bg); border:1px solid var(--border-color); border-radius:8px; padding:12px; color:var(--text-primary); resize:vertical; font-family:inherit; }
+.code-answer { font-family:monospace; font-size:13px; }
+
+.submit-section { display:flex; justify-content:center; padding:24px 0; }
+.btn { padding:8px 16px; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; }
+.btn-large { padding:14px 32px; font-size:16px; }
+.btn-primary { background: linear-gradient(135deg, var(--cyber-green), var(--hacker-green)); color:#000; }
+.btn-secondary { background: var(--cyber-blue); color:#fff; }
+
+.result-card { background: var(--card-bg); border:1px solid var(--border-color); border-radius: var(--border-radius); padding:32px; text-align:center; }
+.result-card h1 { color:var(--hacker-green); margin-bottom:24px; }
+.score-display { display:flex; flex-direction:column; align-items:center; gap:24px; margin-bottom:32px; }
+.score-circle { width:160px; height:160px; border-radius:50%; background:linear-gradient(135deg, rgba(0,255,127,0.1), rgba(0,212,255,0.1)); border:3px solid var(--cyber-blue); display:flex; align-items:center; justify-content:center; }
+.score-value { font-size:36px; font-weight:700; color:var(--hacker-green); }
+.score-details { display:flex; flex-direction:column; gap:12px; width:100%; max-width:400px; }
+.score-item { display:flex; justify-content:space-between; padding:12px; background:rgba(0,212,255,0.05); border:1px solid var(--border-color); border-radius:8px; }
+.score-item .label { color:var(--text-secondary); }
+.score-item .value { color:var(--white); font-weight:600; }
+
+.alert { margin-bottom:12px; padding:12px; border-radius:8px; }
+.alert-error { background: rgba(255,7,58,0.1); border:1px solid rgba(255,7,58,0.3); color: var(--danger-color); }
+.loader { color: var(--text-secondary); text-align:center; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .exercice-player-page { padding: 16px; }
+  .header-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .actions { width: 100%; justify-content: space-between; }
+  .timer { font-size: 14px; padding: 6px 12px; }
+  .meta { flex-direction: column; gap: 8px; }
+  .score-circle { width: 120px; height: 120px; }
+  .score-value { font-size: 28px; }
+  .result-card { padding: 24px 16px; }
+}
+
+@media (max-width: 480px) {
+  .exercice-player-page { padding: 12px; }
+  .question-text { font-size: 14px; }
+  .option-label { padding: 10px; }
+  .btn-large { padding: 12px 24px; font-size: 14px; width: 100%; }
+}

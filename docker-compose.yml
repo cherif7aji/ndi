@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: cybersec_backend
+    restart: unless-stopped
+    ports:
+      - "9000:8000"  # Port personnalisé 9000 au lieu de 8000
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/security_learning.db:/app/security_learning.db
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DATABASE_URL=sqlite:///./security_learning.db
+    networks:
+      - cybersec_network
+
+  frontend:
+    build:
+      context: ./frontend2
+      dockerfile: Dockerfile
+    container_name: cybersec_frontend
+    restart: unless-stopped
+    ports:
+      - "4000:3000"  # Port personnalisé 4000 au lieu de 3000
+    depends_on:
+      - backend
+    networks:
+      - cybersec_network
+    environment:
+      - REACT_APP_API_URL=http://72.61.197.180:9000
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+
+networks:
+  cybersec_network:
+    driver: bridge

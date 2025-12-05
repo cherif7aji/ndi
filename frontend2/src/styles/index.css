@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0f0f1a 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 65, 0.03) 2px,
+      rgba(0, 255, 65, 0.03) 4px
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Variables CSS pour le thème cybersécurité */
+:root {
+  --primary-bg: #0a0a0f;
+  --secondary-bg: #1a1a2e;
+  --accent-bg: #16213e;
+  --sidebar-bg: #0f0f1a;
+  --navbar-bg: #1a1a2e;
+  --card-bg: #1e1e2e;
+  --border-color: #2a2a3a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --text-muted: #707070;
+  --accent-color: #00ff41;
+  --accent-hover: #00cc33;
+  --cyber-green: #00ff41;
+  --cyber-blue: #00d4ff;
+  --cyber-purple: #9d4edd;
+  --cyber-red: #ff073a;
+  --cyber-orange: #ff6b35;
+  --danger-color: #ff073a;
+  --warning-color: #ffaa00;
+  --success-color: #00ff41;
+  --hacker-green: #39ff14;
+  --matrix-green: #00ff00;
+  --terminal-green: #00cc00;
+  --neon-cyan: #00ffff;
+  --electric-blue: #0080ff;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --shadow: 0 8px 32px rgba(0, 255, 65, 0.1);
+  --glow-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyber-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hacker-green);
+}
+
+/* Sélection de texte */
+::selection {
+  background: rgba(0, 255, 65, 0.3);
+  color: var(--white);
+}
+
+/* Focus outline personnalisé */
+*:focus {
+  outline: 2px solid var(--cyber-green);
+  outline-offset: 2px;
+}
+
+/* Utilitaires */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glow {
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+.text-cyber-green {
+  color: var(--cyber-green);
+}
+
+.text-cyber-blue {
+  color: var(--cyber-blue);
+}
+
+.text-cyber-purple {
+  color: var(--cyber-purple);
+}
+
+.bg-card {
+  background: var(--card-bg);
+}
+
+.border-cyber {
+  border: 1px solid var(--cyber-green);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  :root {
+    --border-radius: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}

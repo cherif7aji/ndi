@@ -1,0 +1,58 @@
+.exercices-list-page { padding: 32px; max-width: 1400px; margin: 0 auto; }
+
+.header-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:32px; }
+.title-wrap { display:flex; align-items:center; gap:16px; }
+.title-icon { color:#00d4ff; width:32px; height:32px; }
+.header-row h1 { color: #ffffff; margin:0; font-weight:800; font-size:32px; }
+
+.btn { padding:10px 16px; border:none; border-radius:12px; cursor:pointer; font-weight:700; }
+.btn-primary { background: linear-gradient(135deg, #06b6d4, #3b82f6); color:#fff; box-shadow:0 8px 20px rgba(6,182,212,0.25); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow:0 12px 28px rgba(6,182,212,0.35); }
+
+.alert { margin-bottom:16px; padding:16px; border-radius:12px; }
+.alert-error { background: rgba(255,7,58,0.1); border:1px solid rgba(255,7,58,0.3); color: var(--danger-color); }
+.loader { color: var(--text-secondary); text-align:center; padding:24px; }
+
+/* Empty */
+.empty-state { display:flex; flex-direction:column; align-items:center; gap:12px; padding:40px; color: var(--text-secondary); }
+.empty-icon { color:#00d4ff; }
+
+/* Grid */
+.ex-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+.ex-card { 
+  background: rgba(21, 27, 61, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(148,163,184,0.15);
+  border-radius: 20px; padding: 20px; display:flex; flex-direction:column;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.ex-card:hover { transform: translateY(-6px); border-color: rgba(0,212,255,0.4); box-shadow: 0 16px 32px rgba(0,0,0,0.35); }
+
+.ex-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; gap:12px; flex-wrap:wrap; }
+.ex-type { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:20px; font-size:11px; font-weight:700; border:none; color:#94a3b8; background:transparent; }
+.ex-type svg { stroke-width:2; }
+.ex-diff { padding:6px 12px; border-radius:20px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; }
+.ex-diff.facile { background: rgba(0,255,136,0.15); color:#00ff88; border:1px solid rgba(0,255,136,0.4); }
+.ex-diff.moyen { background: rgba(0,212,255,0.15); color:#00d4ff; border:1px solid rgba(0,212,255,0.4); }
+.ex-diff.difficile { background: rgba(255,7,58,0.15); color:#ff073a; border:1px solid rgba(255,7,58,0.4); }
+
+.ex-title { color:#ffffff; font-size:18px; font-weight:800; margin:8px 0 12px; cursor:pointer; }
+.ex-title:hover { color:#00d4ff; }
+
+.ex-meta { display:flex; gap:14px; color:#94a3b8; font-size:13px; margin-bottom:16px; }
+.meta-item { display:flex; align-items:center; gap:6px; }
+.meta-item svg { background:none !important; border:none !important; border-radius:0 !important; padding:0 !important; }
+.ex-type svg { background:none !important; border:none !important; border-radius:0 !important; padding:0 !important; }
+
+.ex-actions { display:flex; gap:10px; margin-top:auto; }
+.btn-icon { padding:10px; border-radius:10px; border:1px solid rgba(148,163,184,0.2); background: rgba(21,27,61,0.6); color:#e2e8f0; cursor:pointer; transition:all .2s ease; }
+.btn-icon:hover { background: rgba(0,212,255,0.1); border-color: rgba(0,212,255,0.4); color:#00d4ff; transform: translateY(-2px); }
+.btn-icon.success:hover { background: rgba(0,255,136,0.12); border-color: rgba(0,255,136,0.35); color:#00ff88; }
+.btn-icon.danger:hover { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.4); color:#ef4444; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .exercices-list-page { padding: 20px; }
+  .btn { padding:9px 14px; border-radius:10px; }
+}
