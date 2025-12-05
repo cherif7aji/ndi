@@ -41,9 +41,14 @@ fi
 
 echo -e "${BLUE}📦 Utilisation de: ${DOCKER_COMPOSE}${NC}"
 
-# Arrêter les anciens conteneurs s'ils existent
-echo -e "${BLUE}🛑 Arrêt des anciens conteneurs...${NC}"
+# Arrêter et supprimer les anciens conteneurs s'ils existent
+echo -e "${BLUE}🛑 Arrêt et suppression des anciens conteneurs...${NC}"
 $DOCKER_COMPOSE down 2>/dev/null || true
+
+# Supprimer les conteneurs orphelins avec podman/docker
+echo -e "${BLUE}🧹 Nettoyage des conteneurs orphelins...${NC}"
+docker rm -f cybersec_backend cybersec_frontend 2>/dev/null || true
+podman rm -f cybersec_backend cybersec_frontend 2>/dev/null || true
 
 # Nettoyer les anciennes images (optionnel)
 echo -e "${BLUE}🧹 Nettoyage des anciennes images...${NC}"
