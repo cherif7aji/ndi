@@ -49,7 +49,7 @@ const Auth = ({ mode = 'login' }) => {
         }, 2000);
         
       } else {
-        const response = await AuthService.register(formData);
+        await AuthService.register(formData);
         setMessage({ 
           type: 'success', 
           text: '✅ Compte créé avec succès ! Vous pouvez maintenant vous connecter.' 

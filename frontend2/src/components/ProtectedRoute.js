@@ -3,10 +3,9 @@ import { AuthService } from '../services/api';
 import Auth from '../pages/Auth';
 import './ProtectedRoute.css';
 
-const ProtectedRoute = ({ children, authMode, onAuthAction }) => {
+const ProtectedRoute = ({ children, authMode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     checkAuthentication();
@@ -23,8 +22,7 @@ const ProtectedRoute = ({ children, authMode, onAuthAction }) => {
 
     try {
       // Vérifier si le token est valide en récupérant les infos utilisateur
-      const response = await AuthService.getCurrentUser();
-      setCurrentUser(response.data);
+      await AuthService.getCurrentUser();
       setIsAuthenticated(true);
     } catch (error) {
       // Token invalide ou expiré

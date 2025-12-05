@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Search, 
-  Bell, 
-  Settings, 
   User, 
   LogOut,
   Menu,
@@ -10,15 +7,12 @@ import {
 } from 'lucide-react';
 import AuthModal from './AuthModal';
 import './Navbar.css';
-import { API_BASE_URL } from '../config';
 
 const Navbar = ({ onToggleSidebar, onAuthAction, currentAuthMode }) => {
-  const [searchQuery, setSearchQuery] = useState('');
   const [showUserDropdown, setShowUserDropdown] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
-  const [notifications] = useState(3); // Exemple de notifications
 
   // Vérifier l'authentification au chargement et écouter les changements
   useEffect(() => {
@@ -83,10 +77,6 @@ const Navbar = ({ onToggleSidebar, onAuthAction, currentAuthMode }) => {
     };
   }, []);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log('Recherche:', searchQuery);
-  };
 
   const handleLogout = () => {
     localStorage.removeItem('access_token');
